@@ -4,16 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lam Kai Zhe</title>
+  <title>Lam Kai Zhe | Flutter Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand">KZ</div>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#mini-apps">Mini Apps</a></li>
+      <li><a href="#certificate">Certificates</a></li>
+    </ul>
+  </nav>
+
   <!-- HEADER -->
   <header>
     <div class="header-left">
-      <h1>Hi, I'm Lam Kai Zhe</h1>
+      <p class="greeting">Hello, I'm</p>
+      <h1>Lam Kai Zhe</h1>
       <p class="hero-subtitle">Mobile App Developer (Flutter)</p>
 
       <p class="about-hero">
@@ -21,11 +37,15 @@
         Turning ideas into clean, high-quality apps is what I do best.
       </p>
 
-      <a href="#projects" class="btn">See My Work</a>
+      <div class="header-buttons">
+        <a href="#projects" class="btn btn-primary">See My Work</a>
+        <a href="https://www.linkedin.com/in/lam-kai-zhe-53910a201/" class="btn btn-outline" target="_blank">Contact
+          Me</a>
+      </div>
     </div>
 
     <div class="header-right">
-      <img src="images/profile.png" alt="Profile" class="profile-img">
+      <img src="images/profile.png" alt="Lam Kai Zhe - Flutter Developer" class="profile-img">
     </div>
   </header>
 
@@ -83,9 +103,10 @@
 
       <div class="timeline-item">
         <div class="timeline-text">
-          <h3>Mobile App Developer (Flutter) — Ocean Labs Technology Sdn Bhd</h3>
+          <h3>Mobile App Developer (Flutter) — Ocean Hub Management Sdn Bhd</h3>
           <span>Aug 2024 - Present</span>
           <p>Developing and maintaining Flutter apps with improved UI/UX, performance and features.</p>
+          <p>Hands-on experience publishing apps to Google Play Store and Apple App Store.</p>
         </div>
         <div class="timeline-img">
           <img src="images/e_1.jpg" alt="Experience 1">
@@ -99,8 +120,7 @@
           <p>Supported app testing, debugging, and quality assurance for internal systems.</p>
         </div>
         <div class="timeline-img">
-          <img src="images/e_2.png
-          " alt="Experience 2">
+          <img src="images/e_2.png" alt="Experience 2">
         </div>
       </div>
 
@@ -160,27 +180,17 @@
   <section id="mini-apps">
     <h2>My Mini Apps</h2>
 
-    <div class="mini-apps-grid">
-      <div class="project">
-        <img src="images/apps_4.jpeg" class="project-img" alt="Mini App 1">
-        <h2>Memoery Card Game</h2>
-      </div>
-
-      <div class="project">
-        <img src="images/apps_3.jpeg" class="project-img" alt="Mini App 2">
-        <h2>Word Scramble Game</h2>
-      </div>
-
-      <div class="project">
-        <img src="images/apps_2.jpeg" class="project-img" alt="Mini App 3">
-        <h2>To Do App</h2>
-      </div>
-
-      <div class="project">
-        <img src="images/apps_1.jpeg" class="project-img" alt="Mini App 4">
-        <h2>Expenses Tracker App</h2>
+    <!-- Movie UI App -->
+    <div class="mini-app-row">
+      <h3 class="mini-app-title">Movie UI App</h3>
+      <div class="mini-app-images">
+        <img src="images/mini_app1.png" alt="Movie UI Screen 1">
+        <img src="images/mini_app2.png" alt="Movie UI Screen 2">
+        <img src="images/mini_app3.png" alt="Movie UI Screen 3">
       </div>
     </div>
+
+
   </section>
 
 
@@ -202,7 +212,7 @@
 
       <div class="certificate-card">
         <img src="images/c_2.jpg" class="certificate-img" alt="cert2">
-        <h3>Develope Grocery Delivery App with Flutter</h3>
+        <h3>Develop Grocery Delivery App with Flutter</h3>
       </div>
 
       <div class="certificate-card">
@@ -218,10 +228,15 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>Connect with me on
-      <a href="https://www.linkedin.com/in/lam-kai-zhe-53910a201/">LinkedIn</a> |
-      <a href="https://github.com/kaizhelam">GitHub</a>
-    </p>
+    <div class="footer-content">
+      <h3>Let's Connect</h3>
+      <p>Feel free to reach out for collaborations or just a friendly chat.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/lam-kai-zhe-53910a201/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/kaizhelam" target="_blank">GitHub</a>
+      </div>
+      <p class="copyright">&copy; 2024 Lam Kai Zhe. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
