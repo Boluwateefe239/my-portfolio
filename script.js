@@ -39,12 +39,60 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Navbar background on scroll
+// Auto-calculate duration for "Present" positions
+document.querySelectorAll('span[data-start]').forEach(span => {
+  const [startYear, startMonth] = span.dataset.start.split('-').map(Number);
+  const now = new Date();
+  let months = (now.getFullYear() - startYear) * 12 + (now.getMonth() + 1 - startMonth);
+  if (months < 1) months = 1;
+  const yrs = Math.floor(months / 12);
+  const mo = months % 12;
+  let duration = '';
+  if (yrs > 0) duration += yrs + ' yr' + (yrs > 1 ? 's' : '');
+  if (yrs > 0 && mo > 0) duration += ' ';
+  if (mo > 0) duration += mo + ' mo';
+  span.textContent = span.textContent.replace(/Present/, 'Present \u2022 (' + duration + ')');
+});
+
+// Burger menu toggle
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+
+// Close menu when a nav link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    burger.classList.remove('active');
+    navLinks.classList.remove('open');
+  });
+});
+
+// Navbar background on scroll + active link highlight
 const navbar = document.querySelector('.navbar');
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
+
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
   } else {
     navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
   }
+
+  // Highlight active section link
+  let currentId = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+    if (window.scrollY >= top) {
+      currentId = section.getAttribute('id');
+    }
+  });
+
+  navAnchors.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
+  });
 });
