@@ -292,6 +292,140 @@ section h2::after {
 }
 
 /* ===========================
+   PROJECT BANNER CAROUSEL
+   =========================== */
+.project-banner {
+  position: relative;
+  width: 100%;
+  margin-top: 48px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+}
+
+.banner-track {
+  position: relative;
+  width: 100%;
+}
+
+.banner-slide {
+  display: none;
+  width: 100%;
+  position: relative;
+}
+
+.banner-slide.active {
+  display: block;
+}
+
+.banner-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.banner-info {
+  padding: 24px 32px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.banner-info h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.banner-info p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.banner-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.banner-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.banner-prev {
+  left: 16px;
+}
+
+.banner-next {
+  right: 16px;
+}
+
+.banner-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.banner-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.banner-dot.active {
+  background: white;
+  transform: scale(1.15);
+}
+
+@media (max-width: 600px) {
+  .banner-caption {
+    padding: 24px 20px;
+  }
+
+  .banner-caption h3 {
+    font-size: 1.1rem;
+  }
+
+  .banner-caption p {
+    font-size: 0.85rem;
+  }
+
+  .banner-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* ===========================
    TIMELINE (Experience & Education)
    =========================== */
 .timeline {

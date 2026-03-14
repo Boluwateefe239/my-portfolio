@@ -71,6 +71,46 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
+// Banner carousel
+(function () {
+  const slides = document.querySelectorAll('.banner-slide');
+  const dotsContainer = document.querySelector('.banner-dots');
+  const prevBtn = document.querySelector('.banner-prev');
+  const nextBtn = document.querySelector('.banner-next');
+  let current = 0;
+  let autoTimer;
+
+  // Create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('banner-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.banner-dot');
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    resetAuto();
+  }
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+  resetAuto();
+})();
+
 // Navbar background on scroll + active link highlight
 const navbar = document.querySelector('.navbar');
 const sections = document.querySelectorAll('section[id]');
