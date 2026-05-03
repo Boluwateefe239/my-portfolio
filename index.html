@@ -35,7 +35,7 @@
     <div class="header-left">
       <p class="greeting">Hello, I'm</p>
       <h1>Lam Kai Zhe</h1>
-      <p class="hero-subtitle">Mobile App Developer (Flutter)</p>
+      <p class="hero-subtitle">Mobile App Developer <span class="hero-subtitle-accent">/ Flutter</span></p>
 
       <p class="about-hero">
         I build fast, beautiful, and user-friendly mobile apps for both iOS and Android.
@@ -43,14 +43,16 @@
       </p>
 
       <div class="header-buttons">
-        <a href="#projects" class="btn btn-primary">See My Work</a>
+        <a href="#projects" class="btn btn-primary">See My Work <span class="btn-arrow">&rarr;</span></a>
         <a href="https://www.linkedin.com/in/lam-kai-zhe-53910a201/" class="btn btn-outline" target="_blank">Contact
           Me</a>
       </div>
     </div>
 
     <div class="header-right">
-      <img src="images/profile.png" alt="Lam Kai Zhe - Flutter Developer" class="profile-img">
+      <div class="profile-wrap">
+        <img src="images/profile.png" alt="Lam Kai Zhe - Flutter Developer" class="profile-img">
+      </div>
     </div>
   </header>
 
@@ -95,28 +97,72 @@
 
     </div>
 
-    <!-- BANNER CAROUSEL -->
+    <!-- FEATURED PROJECT BANNER -->
     <div class="project-banner">
-      <div class="banner-track">
-        <div class="banner-slide active">
-          <img src="images/piano_1.jpeg" alt="Piano Game 1">
-        </div>
-        <div class="banner-slide">
-          <img src="images/piano_2.jpeg" alt="Piano Game 2">
-        </div>
-        <div class="banner-slide">
-          <img src="images/piano_3.jpeg" alt="Piano Game 3">
-        </div>
-        <div class="banner-slide">
-          <img src="images/piano_4.jpeg" alt="Piano Game 4">
-        </div>
-      </div>
-      <button class="banner-btn banner-prev" aria-label="Previous">&#10094;</button>
-      <button class="banner-btn banner-next" aria-label="Next">&#10095;</button>
-      <div class="banner-dots"></div>
       <div class="banner-info">
         <h3>Piano Game App</h3>
-        <p>A fun and addictive piano tiles game bx zilt with Flutter. Tap the black tiles to play the melody, avoid the white tiles, and challenge your speed and accuracy.</p>
+        <p>A fun and engaging music learning game built with Flutter. Tap along the melody, follow the sheet music journey, and challenge your speed, rhythm, and accuracy across multiple levels.</p>
+      </div>
+
+      <div class="banner-showcase">
+        <div class="banner-frame">
+          <div class="banner-track">
+            <div class="banner-slide active">
+              <img src="images/1.png" alt="Piano Game screenshot 1">
+            </div>
+            <div class="banner-slide">
+              <img src="images/2.png" alt="Piano Game screenshot 2">
+            </div>
+            <div class="banner-slide">
+              <img src="images/3.png" alt="Piano Game screenshot 3">
+            </div>
+            <div class="banner-slide">
+              <img src="images/4.png" alt="Piano Game screenshot 4">
+            </div>
+            <div class="banner-slide">
+              <img src="images/5.png" alt="Piano Game screenshot 5">
+            </div>
+            <div class="banner-slide">
+              <img src="images/6.png" alt="Piano Game screenshot 6">
+            </div>
+            <div class="banner-slide">
+              <img src="images/7.png" alt="Piano Game screenshot 7">
+            </div>
+            <div class="banner-slide">
+              <img src="images/8.png" alt="Piano Game screenshot 8">
+            </div>
+          </div>
+          <button class="banner-btn banner-prev" aria-label="Previous">&#10094;</button>
+          <button class="banner-btn banner-next" aria-label="Next">&#10095;</button>
+          <div class="banner-dots"></div>
+        </div>
+
+        <div class="banner-thumbs">
+          <button class="banner-thumb active" data-index="0" aria-label="Show screenshot 1">
+            <img src="images/1.png" alt="">
+          </button>
+          <button class="banner-thumb" data-index="1" aria-label="Show screenshot 2">
+            <img src="images/2.png" alt="">
+          </button>
+          <button class="banner-thumb" data-index="2" aria-label="Show screenshot 3">
+            <img src="images/3.png" alt="">
+          </button>
+          <button class="banner-thumb" data-index="3" aria-label="Show screenshot 4">
+            <img src="images/4.png" alt="">
+          </button>
+          <button class="banner-thumb" data-index="4" aria-label="Show screenshot 5">
+            <img src="images/5.png" alt="">
+          </button>
+          <button class="banner-thumb" data-index="5" aria-label="Show screenshot 6">
+            <img src="images/6.png" alt="">
+          </button>
+          <button class="banner-thumb" data-index="6" aria-label="Show screenshot 7">
+            <img src="images/7.png" alt="">
+          </button>
+          <button class="banner-thumb" data-index="7" aria-label="Show screenshot 8">
+            <img src="images/8.png" alt="">
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -241,7 +287,7 @@
 
   <!-- BLOG -->
   <section id="certificate">
-    <h2>Certificate & Reward</h2>
+    <h2>Certificate &amp; Reward</h2>
 
     <div class="certificate-grid">
 

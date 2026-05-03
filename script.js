@@ -77,6 +77,8 @@ navLinks.querySelectorAll('a').forEach(link => {
   const dotsContainer = document.querySelector('.banner-dots');
   const prevBtn = document.querySelector('.banner-prev');
   const nextBtn = document.querySelector('.banner-next');
+  const thumbs = document.querySelectorAll('.banner-thumb');
+  if (!slides.length || !dotsContainer) return;
   let current = 0;
   let autoTimer;
 
@@ -95,9 +97,11 @@ navLinks.querySelectorAll('a').forEach(link => {
   function goTo(index) {
     slides[current].classList.remove('active');
     dots[current].classList.remove('active');
+    if (thumbs[current]) thumbs[current].classList.remove('active');
     current = (index + slides.length) % slides.length;
     slides[current].classList.add('active');
     dots[current].classList.add('active');
+    if (thumbs[current]) thumbs[current].classList.add('active');
     resetAuto();
   }
 
@@ -108,6 +112,9 @@ navLinks.querySelectorAll('a').forEach(link => {
 
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => goTo(i));
+  });
   resetAuto();
 })();
 
@@ -117,11 +124,7 @@ const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-  } else {
-    navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
 
   // Highlight active section link
   let currentId = '';
